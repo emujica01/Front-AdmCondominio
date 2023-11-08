@@ -1,0 +1,149 @@
+<ngx-spinner
+  type="ball-triangle-path"
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="large"
+  color="#0066FF">
+</ngx-spinner>
+
+<div class="container-fluid">
+  <div class="left d-flex justify-content-center">
+    <div class="">
+      <div
+        class="d-md-flex align-items-center h-100 p-5 text-center justify-content-center"
+      >
+        <div class="pt-5 pb-5">
+          <P class="mb-0 left-text"
+            >Sistema <br />
+            de Administracion<br />
+            de Condominios</P
+          >
+          <!-- <P class="l-txt"> es internet </P> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right -->
+
+  <div class="right">
+    <div class="card border-0 rounded-5 my-5" id="login1">
+      <div class="card-body">
+        <div
+          class="mb-3 d-flex justify-content-center align-items-center flex-column"
+          id="logo"
+        >
+        <h1 class="texto"> Inicio de Sesion</h1>
+          <img [src]="ImagePath.logo" id="AdmCondominio_logo" /> 
+          <!-- <img [src]="ImagePath.logo" id="airtek_logo" /> -->
+        </div>
+        <!--  -->
+
+        <form
+        [formGroup] = "LoginForm"
+        (ngSubmit) = "onSubmit()"
+        id="FormLogin"
+        novalidate>
+          <!-- Inputs del Login Div -->
+          <div id="form_login">
+            <div class="col-md-12 mt-4">
+              <fa-icon [icon]="['fas', 'user']" class="iconLoginU"></fa-icon>
+              <input
+                type="text"
+                name="username"
+                required
+                class="form-control inputLogin"
+                id="userInput"
+                aria-describedby="emailHelp"
+                placeholder="Usuario"
+                formControlName="username"
+                autocomplete="off"
+                #userInput
+              />
+              <div
+              class="container-error-message"
+              *ngIf="LoginForm.get('username')?.touched
+                                    && LoginForm.get('username')?.errors?.['required']
+                                    "
+              id="error_input"
+            >
+              Es requerido este campo
+            </div>
+
+            <!-- Validacion de usuario LOGIN  -->
+            <p
+              id="error_p"
+              *ngIf="LoginForm.get('username')?.errors?.['pattern']
+                       || LoginForm.get('username')?.hasError('message')"
+            >
+              Usuario inválido
+            </p>
+            </div>
+
+            <div class="col-md-12 mt-g2">
+              <div class="d-flex align-items-center">
+                <fa-icon
+                  [icon]="['fas', 'lock']"
+                  class="iconLogin iconPass"
+                ></fa-icon>
+                <input
+                  [type]="tipo"
+                  name="password"
+                  minlength="6"
+                  class="form-control inputLogin"
+                  id="exampleInputPassword1"
+                  placeholder="Contraseña"
+                  formControlName="password"
+                  #pass
+                />
+                <span class="caseEye">
+                  <fa-icon
+                    [icon]="['fas', 'eye']"
+                    class="iconEye"
+                    (click)="mostrarContrasena()"
+                    id="eye"
+                  ></fa-icon>
+                  <fa-icon
+                    [icon]="['fas', 'eye-slash']"
+                    class="iconEye d-none"
+                    (click)="mostrarContrasena()"
+                    id="eyeSlash"
+                  ></fa-icon>
+                </span>
+              </div>
+              <div
+              class="container-error-message pt-1"
+              *ngIf="LoginForm.get('password')?.touched
+                                    && LoginForm.get('password')?.errors?.['required']
+                                    "
+              id="error_input"
+            >
+              Es requerido este campo
+            </div>
+
+            <!-- Validar minimo de contraseña -->
+            <div
+              class="container-error-message"
+              *ngIf="LoginForm.get('password')?.touched && LoginForm.get('password')?.errors?.['minlength']
+                       "
+              id="error_input"
+            >
+              Ingrese una contraseña mayor a seis (06) digitos
+            </div>
+
+            </div>
+          </div>
+          <!-- Fin -->
+          <div
+            class="justify-content-center align-items-center d-grid d-flex mx-auto"
+          >
+            <div class="d-grid gap-2 w-100">
+              <button class="btn btn-g btn-lg" type="submit" [disabled]="!LoginForm.valid">
+                <p class="ng">Iniciar sesión</p>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

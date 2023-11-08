@@ -1,0 +1,49 @@
+<mat-card class="card-g-2">
+    <mat-card-header><h2 class="titulo">Solicitudes</h2></mat-card-header>
+    <mat-card-content
+      ><table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Asunto</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="pointer" (click)="openSolicitudesDetalle(1)">
+            <th scope="row" class="date">02-06-2023</th>
+            <td class="asunto">Cliente ha abandonado el chat</td>
+            <td><span class="activo">Abierto</span></td>
+          </tr>
+          <tr class="pointer" (click)="openSolicitudesDetalle(1)">
+            <th scope="row" class="date">02-06-2023</th>
+            <td class="asunto">Cliente ha abandonado el chat</td>
+            <td><span class="inactivo">Cerrado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+
+
+  <div class="modal fade" id="solicitudes" tabindex="-1" aria-labelledby="solicitudesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="tituloModal">Ticket Nro: 1234</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Asunto: <b>Cliente ha abandonado el chat</b></p>
+          <p>Fecha de creación: <b>23/05/23</b></p>
+          <p>Fecha de actualización: <b>23/05/23</b></p>
+          <P>Estado: <span class="inactivo"> Cerrado</span></P>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

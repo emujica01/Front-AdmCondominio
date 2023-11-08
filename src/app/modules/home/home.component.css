@@ -1,0 +1,111 @@
+.card-g-1{
+    min-height: 356.9px;
+}
+
+ .card-g-2{
+    min-height: 21em;
+}
+
+.content-servi{
+    padding:20px;
+}
+/* .monto{
+    color:#FF7C33;
+    font-weight: 700;
+} */
+
+.iconBLue{
+    color: #0066FF;
+    margin-top: -.1em;
+}
+
+.mt-g{
+    margin-top: .2em;
+}
+
+.verMas{
+
+    color:rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.verMas:hover{
+    color:rgba(0, 0, 0, 1);
+    transition: 1s;
+}
+.server{
+    min-width:95px; 
+    padding: 10px 15px;
+    background-color: #0066FF;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 19.5px;
+    font-size: 14px;
+    text-align: center;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.iconError{
+    color:#F55B5D;
+    width: 1em;
+    height: 1em;
+    font-size: 4em;
+}
+.mensajeError{
+    font-size: 16px;
+    line-height: 19.5px;
+    padding-top: 1em;
+}
+.filterHorasActivo{
+    margin-top: .3em;
+    padding: 6px 25px;
+    background-color: #0066FF;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 19.5px;
+    font-size: 14px;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+}
+
+.filterHoras{
+    margin-top: .3em;
+    padding: 6px 25px;
+    background-color: rgba(0, 102, 255, 0.16);
+    border-radius: 30px;
+    color: rgba(0, 102, 255, 0.8);;
+    font-weight: 700;
+    line-height: 19.5px;
+    font-size: 14px;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+}
+
+.filterHoras:hover{
+    background-color: #0066FF;
+    color: #fff;
+    transition: 1s;
+}
+
+
+
+tbody th,td{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+@media only screen and (max-width: 770px) {
+
+    /* .row-responsive{
+        flex-direction: column !important;
+    } */
+
+  }

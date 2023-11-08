@@ -1,0 +1,36 @@
+<mat-card class="card-g-1">
+    <mat-card-header>
+      <div class="d-flex justify-content-between w-100 traficoResponsivo">
+        <div class="d-flex gap-5 tituloResponsivo">
+          <h2 class="titulo">Trafico</h2>
+          <div class="cajaSelect">
+          <select
+            class="form-select selectAirtek"
+            aria-label="Default select example"
+            (change)="selectServicio(servicio.value)"
+            #servicio
+          >
+            <option value='' selected>Seleccionar Servicios</option>
+            <option value="{{servi.codGrafico}}" *ngFor="let servi of serviciosInternet">{{servi.nombre}}</option>
+          </select>
+        </div>
+        </div>
+        <div class="d-flex gap-2 hrResponsive">
+          <button type="button" class="filterHorasActivo" id='6h' (click)="clickHr(1,servicio.value)">6 Horas</button>
+          <button type="button" class="filterHoras" id='24h' (click)="clickHr(2,servicio.value)">24 Horas</button>
+          <button type="button" class="filterHoras" id='48h' (click)="clickHr(3,servicio.value)">48 Horas</button>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex error p-5" id='error'>
+        <mat-icon fontIcon="cancel" class="iconError"></mat-icon>
+        <p class="mensajeError">
+          No se encontraron datos a mostrar
+        </p>
+      </div>
+      <div class="d-flex justify-content-center pt-3 d-none" id="normal">
+        <img [src]="img" class="imgGrafico">
+      </div>
+    </mat-card-content>
+  </mat-card>

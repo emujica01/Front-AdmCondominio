@@ -1,0 +1,281 @@
+<ngx-spinner
+  type="ball-triangle-path"
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="large"
+  color="#0066FF">
+</ngx-spinner>
+<div class="container-fluid mt-4">
+    <h2 class="tituloModule mb-4">Ingreso de Condominio</h2>
+    <div class="row">
+
+      <form
+              [formGroup]="procesarFrom1"
+              (ngSubmit)="
+                addReporte(medio.value,pref.value,numero.value,referencia.value)
+              "
+              id="FormDocumento1"
+              novalidate
+              >
+      <div class="mb-3">
+        <label for="nombre" class="form-label labelAirtek">Nombre</label>
+        <input type="text" class="form-control selectAirtek" id="nombre" placeholder="Nombre del Condominio" #referencia>
+        <div
+        class="container-error-message"
+        *ngIf="procesarFrom1.get('nombre')?.touched
+            && procesarFrom1.get('nombre')?.errors?.['required']
+            "
+        id="error_input">
+        El campo es requerido
+      </div>
+      <div
+      class="container-error-message"
+      *ngIf="procesarFrom1.get('nombre')?.touched
+          && procesarFrom1.get('nombre')?.errors?.['minlength']
+          "
+      id="error_input">
+      Minimo 7 caracteres
+    </div>
+    </div>   
+
+      <div >
+        <input class="btn btn-primary btn-airtek px-55" type="submit" value="Guardar2">
+
+    </div>
+  </form>
+
+      
+      
+      <div class="col-md-3 mt-4 pe-4 pagosResponsive">
+        <mat-card class="card-pago">
+            <mat-card-header><h2 class="titulo pb-2">Pago</h2></mat-card-header>
+            <mat-card-content>
+              <form
+              [formGroup]="procesarFrom"
+              (ngSubmit)="
+                addReporte(medio.value,pref.value,numero.value,referencia.value)
+              "
+              id="FormDocumento"
+              novalidate
+              >
+                <div class="mb-3">
+                    <label for="metodo" class="form-label labelAirtek">Medio de pago</label>
+                    <select
+                    id="metodo"
+                    class="form-select selectAirtek"
+                    #medio
+                    (change)="medioDePago(medio.value)">
+                    <option selected value="">Medio de pago</option>
+                    <option value="1">Zelle</option>
+                    <option value="2">Transferencia</option>
+                    <option value="3">Pago móvil</option>
+                  </select>
+                  <div
+                  class="container-error-message"
+                  *ngIf="procesarFrom.get('medio')?.touched
+                      && procesarFrom.get('medio')?.errors?.['required']
+                      "
+                  id="error_input"
+                >
+                  El campo es requerido
+                </div>
+                </div>
+                <div class="mb-3 d-none" id="number">
+                    <label for="numero" class="form-label labelAirtek">Numero Asocioado</label>
+                    <div class="d-flex gap-3">
+                        <select
+                        class="form-select selectAirtek w-50"
+                        [disabled]="diabled" #pref>
+                        <option selected value="">-</option>
+                        <option value="412">0412</option>
+                        <option value="414">0414</option>
+                        <option value="424">0424</option>
+                        <option value="416">0416</option>
+                      </select>
+                        <input type="number" class="form-control selectAirtek" id="numero" placeholder="Número de teléfono"  [disabled]="diabled" #numero>
+
+                    </div>
+                    <div
+                    class="container-error-message"
+                    *ngIf="procesarFrom.get('pref')?.touched
+                        && procesarFrom.get('pref')?.errors?.['required']
+                        "
+                    id="error_input"
+                  >
+                    El campo es requerido
+                  </div>
+                  <div
+                  class="container-error-message"
+                  *ngIf="procesarFrom.get('numero')?.touched
+                      && procesarFrom.get('numero')?.errors?.['required']
+                      "
+                  id="error_input"
+                >
+                  El campo es requerido
+                </div>
+                <div
+                class="container-error-message"
+                *ngIf="procesarFrom.get('numero')?.touched
+                    && procesarFrom.get('numero')?.errors?.['minLength']
+                    "
+                id="error_input"
+              >
+                el numero es invalido
+              </div>
+                </div>
+                <div class="mb-3">
+                    <label for="referencia" class="form-label labelAirtek">Referencia</label>
+                    <input type="text" class="form-control selectAirtek" id="referencia" placeholder="Número de referencia" #referencia>
+                    <div
+                    class="container-error-message"
+                    *ngIf="procesarFrom.get('referencia')?.touched
+                        && procesarFrom.get('referencia')?.errors?.['required']
+                        "
+                    id="error_input"
+                  >
+                    El campo es requerido
+                  </div>
+                  <div
+                  class="container-error-message"
+                  *ngIf="procesarFrom.get('referencia')?.touched
+                      && procesarFrom.get('referencia')?.errors?.['minlength']
+                      "
+                  id="error_input"
+                >
+                  Minimo 7 caracteres
+                </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class="btn btn-primary btn-airtek px-55" type="submit" value="Listo">
+
+                </div>
+              </form>
+                <div class="d-flex justify-content-center py-4">
+                    <span class="date pointer" (click)="openDatos()">Datos de pago</span>
+                </div>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <mat-card class="col-md-9 mt-4">
+        <mat-card-header><h2 class="titulo">Listado de Condominios ({{arrayReporte.length}})</h2></mat-card-header>
+        <mat-card-content class="d-flex flex-column justify-content-between h-100">
+          <div class="table-responsive scrollBlack">
+            <table class="table table-striped table-borderless table-fixed table-div">
+                <thead class="table-header">
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Nombre</th>          
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="arrayReporte.length==0">
+                      <td colspan="4" class="text-center">Sin registros</td>
+                    </tr>
+                    <tr *ngFor="let a of arrayReporte">
+                      <td>{{a.medioMuestra}}</td>
+                      <td>{{a.telefonoMuestra}}</td>
+                      <td>{{a.referencia}}</td>
+                      <td class="d-flex gap-2">
+                        <span class="material-icons-outlined iconDelete pointer" (click)="dltReporte(a.id)">
+                          delete
+                          </span>
+                      </td>
+                    </tr>
+
+                  </tbody>
+            </table>
+            </div>
+            <div class="d-flex justify-content-start pb-3" id="button">
+                <input type="button" class="btn btn-primary btn-airtek px-55 pointer" (click)="reportarPagoLote()" value="Reportar Pago">
+            </div>
+        </mat-card-content>
+  </mat-card>
+
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="datos" tabindex="-1" aria-labelledby="datosLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h2 class="tituloModal">Métodos de pago</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gap-4">
+          <div>
+            <div class="">
+              <h5 class="subTitulosMetodos">Transferencia</h5>
+            </div>
+            <div class="d-flex gap-3">
+              <img [src]="ImagePath.bnc" class='logoBancos' alt="">
+              <div>
+                <p class="pb-0 document"><b class="me-2">0191-0032442132-071165</b>
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+
+                <p class="pb-0"><span class="me-2">J-297655948</span>
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+                <p class="pb-0">CORPORACION MATRIX TV CA SA</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="">
+              <h5 class="subTitulosMetodos">Pago móvil</h5>
+            </div>
+            <div class="d-flex gap-3">
+              <img [src]="ImagePath.bnc" class='logoBancos' alt="">
+              <div>
+                <p class="pb-0 document"><b class="me-2">0412-2478331</b>
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+
+                <p class="pb-0"><span class="me-2">J-297655948</span>
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+                <p class="pb-0"><b>BNC</b> Banco Nacional de Crédito</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div>
+            <div class="">
+              <h5 class="subTitulosMetodos">Zelle</h5>
+            </div>
+            <div class="d-flex gap-3">
+              <img [src]="ImagePath.zelle" class='logoBancos' alt="">
+              <div>
+                <p class="pb-0"><b class="me-2">zelle@airtek.com.ve</b>
+
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+
+                <p class="pb-0"><span class="me-2">CORPORACION MATRIX TV CA</span>
+                  <span class="material-icons-outlined iconCopy pointer">
+                    content_copy
+                    </span>
+                </p>
+                <p class="pb-0">LLC</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+export const ArrayMenu =[
+    {
+        nombre:'Inicio',
+        url:'/home'
+    },
+    {
+        nombre:'Condominio',
+        url:'/reportesPagos'
+    },
+    {
+        nombre:'Edificio',
+        url:'/PagosEnLinea'
+    },
+    {
+        nombre:'Edificio',
+        url:'/PagosEnLinea'
+    },
+    {
+        nombre:'Apartamentos',
+        url:'/PagosEnLinea'
+    },
+    {
+        nombre:'Propietarios',
+        url:'/PagosEnLinea'
+    },
+    {
+        nombre:'Bancos',
+        url:'/PagosEnLinea'
+    },
+    {
+        nombre:'Cuentas',
+        url:'/PagosEnLinea'
+    }
+]

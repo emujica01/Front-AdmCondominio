@@ -1,0 +1,32 @@
+@import "../../home.component.css";
+
+
+.cajaSelect{
+    display: flex;
+    align-items: center;
+}
+
+.imgGrafico{
+ 
+    width: 47vw;
+    /* width: 75vw; */
+    /* height: 30vh; */
+}
+
+@media only screen and (max-width: 770px) {
+
+    .traficoResponsivo{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .hrResponsive{
+        justify-content: center;
+    }
+
+    .imgGrafico{
+        width: 70vw;
+    }
+
+  }
+

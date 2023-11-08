@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body class="sb-nav-fixed">
+    <!--  -->
+    <app-header *ngIf="promise"></app-header>
+    <div id="layoutSidenav">
+      <!--  -->
+      <app-menu></app-menu>
+      <!--  -->
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <router-outlet></router-outlet>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

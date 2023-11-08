@@ -1,0 +1,19 @@
+.text-bg-dark {
+    /* color: #fff!important; */
+    background-color: #111111 !important;
+}
+
+.canvasSm{
+    --bs-offcanvas-width:330px !important;
+}
+
+.offcanvas-footer {
+    padding: .75rem;
+    /* background-color: #f8f9fa; */
+    /* border-top: 1px solid #dee2e6; */
+  }
+
+.text-menu{
+    font-size: 18px !important;
+    font-weight: 600;
+}

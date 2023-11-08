@@ -1,0 +1,127 @@
+.cardMonto{
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1em;
+}
+
+.textMV{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.5px;
+}
+.iconCopy{
+    font-size: 14px;
+}
+.pb-0{
+    margin-bottom: 0 !important;
+}
+.logoBancos{
+    width: 66px;
+}
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background-color: #0066FF;
+    margin-top: .25em;
+}
+
+.deuda{
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 0 !important;
+}
+
+.table-striped tr {
+    border-radius: 10px;
+  }
+
+.vencimiento{
+margin-bottom: 0 !important;
+font-size: 13px;
+font-weight: 400;
+}
+.px-55 {
+    padding-right: 2rem!important;
+    padding-left: 2rem!important;
+}
+
+.cajaCreate{
+    background-color: #0066FF;
+    border-radius: 1em;
+    width: 2em;
+    height: 2em;
+}
+
+.iconDelete{
+    color: #F55B5D;
+}
+
+.iconCreate::before{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.subTitulosMetodos{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.document{
+    font-weight: 400;
+}
+
+.list-group-item{
+    border: none;
+    background-color: none;
+}
+
+::ng-deep .popover {
+    max-width: 20% !important;
+    margin-left: 3.5em !important;
+  }
+
+
+
+
+.card-pago{
+    min-height: 431px !important;
+}
+
+.textSeleccione{
+    line-height: 19.5px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 3.4em;
+}
+
+.opcionesBancos {
+    cursor: pointer;
+    border: 2px solid #111;
+     border-radius: 54px !important;
+    background-color: transparent;
+    width: 80%;
+    margin: auto;
+    max-width: 380px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 2px 20px;
+    align-items: center;
+    transition: border-color .1s ease-in;
+    height: 44px;
+}
+
+@media only screen and (max-width: 770px) {
+
+    .botonesResponsive{
+        margin-bottom: 1.5em;
+    }
+
+    .pagosResponsive{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+    }
+
+  }

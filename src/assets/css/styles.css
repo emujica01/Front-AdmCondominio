@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "HeadingProWide";
+    src: url("../font/HeadingProWide-ExtraBold.woff") format("woff"),
+      url("../font/HeadingProWide-ExtraBold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("../font/Montserrat-VariableFont_wght.ttf") format("TTF");
+  }
+
+  * {
+    font-family: "Montserrat", sans-serif; 
+  }
+
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .selectAirtek{
+    border: 2px solid #111111 !important;
+    border-radius: 54px !important;
+  }
+
+  .labelAirtek{
+    font-weight: 600;
+  }
+
+
+  .modal-header{
+    border-bottom: none !important;
+  }
+
+  .modal-footer{
+    border-top: none !important;
+  }
+
+  /* .modal-body{
+    padding: 0 !important;
+    padding-left: var(--bs-modal-padding);
+    padding-right: var(--bs-modal-padding);
+    padding-bottom: var(--bs-modal-padding);
+  } */
+
+  .date{
+    color: #0066FF !important;
+
+    
+    font-weight: 700;
+}
+
+.activo{
+    color:#0B8D00;
+
+    font-weight: 700;
+}
+.monto{
+    color:#FF7C33 !important;
+    font-weight: 700;
+}
+
+.inactivo{
+    color:#F55B5D;
+    font-weight: 700;
+}
+.asunto{
+    font-weight: 500;
+}
+
+.titulo{
+    font-family: "HeadingProWide";
+    font-weight: 700;
+    line-height: 26.4px;
+    font-size: 20px;
+    margin-left: .4em;
+}
+
+.tituloModal{
+  font-family: "HeadingProWide";
+  font-weight: 700;
+  line-height: 26.4px;
+  font-size: 20px;
+  margin-bottom: 0 !important;
+}
+
+.tituloModule{
+  font-family: "HeadingProWide";
+  font-weight: 700;
+  line-height: 26.4px;
+  font-size: 20px;
+}
+
+
+.btn-airtek{
+  background: #0066FF !important;
+  border: #0066FF 2px solid !important;
+  border-radius: 10px !important;
+}
+
+.btn-airtek:hover{
+  background: #FFFFFF !important;
+  color: #0066FF !important;
+  transition: .5s;
+  border-radius: 10px !important;
+}
+
+
+.modal-header{
+  padding-top: 36px !important;
+  padding-left:36px !important;
+  padding-right: 36px !important;
+
+}
+
+.modal-body{
+  padding-bottom: 36px !important;
+  padding-left:36px !important;
+  padding-right: 36px !important;
+
+}
+
+
+#error_input {
+  float: none;
+  color: red;
+  padding-left: 0.5em;
+  padding-top: 0.3em;
+  vertical-align: middle;
+  font-size: 12px;
+}
+#error_p {
+  float: none;
+  color: red;
+  padding-left: 0.5em;
+  vertical-align: middle;
+  font-size: 12px;
+  padding-top: 0.3em;
+}
+
+.table-responsive{
+  max-height: calc(380px - 103px);
+}
+
+.table-header {
+  background-color: #ffffff;
+  /* color: #ffffff;
+  border-left: 0 !important;
+  border-right: 0 !important; */
+}
+
+.table-fixed thead {
+  position: sticky;
+  top: 0;
+}
+
+.table-div {
+  margin-bottom: 0;
+}
+
+/*Scroll*/
+
+div.scrollBlack::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #dee2e6;
+}
+
+div.scrollBlack::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #111111;
+  margin-left: 1em;
+}
+
+div.scrollBlack::-webkit-scrollbar-thumb {
+  background-color: #111111;
+}

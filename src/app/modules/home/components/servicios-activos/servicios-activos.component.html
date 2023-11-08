@@ -1,0 +1,94 @@
+<div class="content-servi">
+  <h2 class="titulo">Servicios Activos</h2>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex gap-3">
+          <mat-icon fontIcon="language" class="icon"></mat-icon>
+          <p class="mt-g">Internet ({{ serviciosInternet.length }})</p>
+        </div>
+        <p class="verMas" (click)="openServicioDetalle(1)">ver más</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row d-flex">
+        <div
+          *ngIf="serviciosInternet.length == 0"
+          class="d-flex justify-content-center"
+        >
+          Sin servicios activos de internet
+        </div>
+
+        <div
+          class="col-md-3 mb-2"
+          *ngFor="let inter of serviciosInternet | slice : 0 : 3"
+        >
+          <div class="server">{{ inter.nombre }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex gap-3">
+          <mat-icon fontIcon="lan" class="icon"></mat-icon>
+          <p class="mt-g">Transporte ({{ serviciosTransporte.length }})</p>
+        </div>
+        <p class="verMas" (click)="openServicioDetalle(2)">ver más</p>
+      </div>
+    </div>
+    <div class="col-md-12 d-flex gap-3">
+      <div class="row d-flex">
+        <div
+          *ngIf="serviciosTransporte.length == 0"
+          class="d-flex justify-content-center"
+        >
+          Sin servicios activos de transporte
+        </div>
+        <div
+          class="col-md-3 mb-2"
+          *ngFor="let trans of serviciosTransporte | slice : 0 : 3"
+        >
+          <div class="server">{{ trans.nombre }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="servicios"
+  tabindex="-1"
+  aria-labelledby="serviciosLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="tituloModal">Servicios Activos: {{ tituloDetalle }}</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div
+            class="col-md-12 d-flex justify-content-center"
+            *ngIf="servicioDetalle.length == 0"
+          >
+            Sin servicios
+          </div>
+          <div class="col-md-3 mb-3" *ngFor="let detalle of servicioDetalle">
+            <div class="server fDetalle">{{ detalle.nombre }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

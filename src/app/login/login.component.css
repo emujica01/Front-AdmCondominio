@@ -1,0 +1,289 @@
+#error_input {
+    float: none;
+    color: red;
+    padding-left: 0.5em;
+    padding-top: 0.3em;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  #error_p {
+    float: none;
+    color: red;
+    padding-left: 0.5em;
+    vertical-align: middle;
+    font-size: 12px;
+    padding-top: 0.3em;
+  }
+  
+  body {
+    background-color: black;
+    background-image: radial-gradient(
+        circle at top right,
+        rgba(121, 68, 154, 0.13),
+        transparent
+      ),
+      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+  }
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Información con posición absoluta */
+  #rela {
+    /* centrar vertical y horizontalmente */
+    position: relative;
+    margin: 0 auto;
+    /* Todos los límites en cero para ocupar todo el espacio disponible */
+    /* top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center; */
+  }
+  
+  #login {
+    background-color: rgba(240, 240, 240, 0.902);
+  }
+  
+  #login #form_login input {
+    background: #ffffff !important;
+    border: 2px solid #111111;
+    border-radius: 54px;
+  }
+  
+  #form_login > div {
+    height: 5em;
+  }
+  
+  /* .form-switch .form-check-input {
+    height: 1.3em !important;
+    width: 2.4em !important;
+  } */
+  
+  @media (min-width: 320px) and (max-width: 720px) {
+    .container .row .col > div {
+      width: 90%;
+    }
+  }
+  
+  #login1 #form_login input {
+    background: #ffffff !important;
+    border: 2px solid #111111;
+    border-radius: 54px;
+    width: 100%;
+  }
+  
+  .left #texto {
+    padding-bottom: 7.5em;
+  }
+  
+  .tituloLogin {
+    color: #ffffff;
+    font-family: "TituloLogin";
+    font-size: 3.5em;
+  }
+  
+  .pLogin {
+    color: #ffffff;
+    font-family: "Cuerpo";
+    font-size: 2em;
+    margin-bottom: -0.1em;
+  }
+  .iconLoginU {
+    position: absolute;
+    margin-top: 0.5em;
+    margin-left: 0.8em;
+    color: #0066ff;
+  }
+  .iconLogin {
+    position: absolute;
+    margin-top: 0.8em;
+    margin-left: 0.8em;
+    color: #0066ff;
+  }
+  .iconPass {
+    margin-top: 0;
+  }
+  .mt-g {
+    margin-top: -1em;
+  }
+  .mt-g2 {
+    margin-top: -0.5em;
+  }
+  .iconEye {
+    color: #0066ff;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .iconEye:hover {
+    opacity: 1;
+  }
+  .caseEye {
+    /* margin-top: .8em; */
+    margin-left: -2em;
+  }
+  .inputLogin {
+    text-indent: 1.2em;
+  }
+  .form-check-input {
+    width: 2.7em;
+    height: 1.5em;
+  }
+  
+  /* Para las columnas */
+  .container-fluid {
+    margin: 0px auto !important;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    padding: 0px;
+  }
+  
+  .left {
+    /* margin: 0px; */
+    /* height: 100%; */
+    /* margin-left: 0;
+    margin-top: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url("../../assets/img/Frame3.1.png"); */
+    /* background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.8)), url("../../assets/img/fotoLogin.png"); */
+    /* background-position: -1em;
+    background-repeat: no-repeat; */
+    /* background-image: url("../../assets/img/fotoLogin.png"); */
+    /* background-size: 100vh; */
+    /* align-items: flex-end; */
+    /* justify-content: flex-end; */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../assets/img/bg-left.jpg");
+    height: 100vh;
+    border-color: rgba(0, 0, 0, 1);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .right {
+    margin: 0px;
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  #login1 {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  /* Container logo */
+  
+  /* img Logo */
+  #login1 #logo img {
+    width: 15em;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Sigo Logo */
+  #login1 #logo #sigo_logo {
+    width: 8em;
+  }
+  
+  /* Airtek Logo */
+  #login1 #logo #airtek_logo {
+    width: 100%;
+  }
+  
+  .btn-g {
+    background-color: #111111;
+    border-radius: 6em;
+    color: #ffffff;
+    width: 100%;
+    height: 2em;
+  }
+  .btn-g:hover {
+    background-color: #0066ff;
+  }
+  .ng {
+    margin-top: -0.2em;
+  }
+  
+  .form-check-input:checked {
+    background-color: #111111;
+    border-color: #111111;
+  }
+  
+  .card-body {
+    width: 100%;
+  }
+
+  .left-text {
+    font-family: "HeadingProWide" !important;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: left;
+    line-height: 50px;
+}
+
+.texto {
+  font-size: 45px;
+  text-align: left;
+  color: gray;
+  font-weight: 200;
+  line-height: 43px;
+}
+
+.l-txt {
+  font-size: 45px;
+  text-align: left;
+  color: #ffffff;
+  font-weight: 200;
+  line-height: 43px;
+}
+
+  
+  /* Reponsive Login */
+  @media screen and (max-width: 800px) {
+    .left {
+      display: none !important;
+      visibility: hidden;
+    }
+  
+    .container-fluid {
+      margin: 0 !important;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      /* padding: 75px 0px 0px 0px; */
+    }
+    .right {
+      justify-content: center;
+      display: flex;
+      /* margin: 0px 0px !important; */
+    }
+    #login1 {
+      width: 80%;
+    }
+  }
+  

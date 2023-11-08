@@ -1,0 +1,20 @@
+
+<div class="offcanvas offcanvas-start text-bg-dark canvasSm" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header d-flex justify-content-end">
+    <mat-icon fontIcon="close" data-bs-dismiss="offcanvas" class="pointer"></mat-icon>    
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
+        <li class="nav-item py-1" *ngFor="let me of main">
+          <a class="nav-link text-menu border-g" aria-current="page" href='{{me.url}}' routerLink='{{me.url}}'>{{me.nombre}}</a>
+        </li>
+      </ul>
+  </div>
+  <div class="offcanvas-footer">
+    <a (click)="logout_1()">
+    <div class="d-flex justify-content-center gap-3 pointer">
+        <mat-icon fontIcon="logout"></mat-icon> <p class="text-menu">Cerrar sesion</p>
+    </div>
+    </a>
+  </div>
+</div>

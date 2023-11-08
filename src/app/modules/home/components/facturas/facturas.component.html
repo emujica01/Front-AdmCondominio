@@ -1,0 +1,27 @@
+<mat-card class="card-g-1">
+    <mat-card-header><h2 class="titulo">Factura</h2></mat-card-header>
+    <mat-card-content>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Referencia</th>
+            <th scope="col">Monto</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf='facturas.length == 0' colspan="4">Sin Registros</tr>
+          <tr *ngFor="let item of facturas | slice:0:9">
+            <th scope="row" class="date">{{item.fecha}}</th>
+            <td class="asunto">{{item.factura}}</td>
+            <td class="monto">${{item.monto}}</td>
+            <td>
+              <span class="material-icons-outlined iconBLue pointer" (click)="descargaPdf(item.factura,item.fecha)">
+                file_download
+                </span>
+            </td>
+          </tr>
+        </tbody></table
+    ></mat-card-content>
+  </mat-card>
